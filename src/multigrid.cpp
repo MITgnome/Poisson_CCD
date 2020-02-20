@@ -1273,7 +1273,7 @@ void MultiGrid::SetFixedCharges(Array3D* rho, Array2DInt* Ckmin)
 	}
       if (NLeft == NRight)  NTaper = NLeft;
       else NTaper = max(NLeft, NRight);
-      LastCS = 0, LastC = i;	  
+        static_cast<void>(LastCS = 0), LastC = i;
       if (VerboseLevel > 2) printf("In SetFixedCharges. Nz = %d, NTaper = %d \n",rho->nz,NTaper);
       for (i=0; i<rho->nx; i++)
 	{
@@ -2324,7 +2324,7 @@ double MultiGrid::GetElectronInitialZ()
 void MultiGrid::TraceSpot(int m)
 {
   // This builds up a Gaussian spot with given center (Xoffset, Yoffset) and SigmaX and SigmaY
-  double x, y, z, rsq, v1, v2, fac, xcenter, ycenter;
+    double x, y, z, rsq, v1 = 0.0, v2 = 0.0, fac, xcenter, ycenter;
   int n;
   double bottomcharge = 1.0 / (double)BottomSteps;
   double* point = new double[3];
@@ -2387,7 +2387,7 @@ void MultiGrid::TraceSpot(int m)
 void MultiGrid::TraceFringes(int m)
 {
   // This traces a random set of starting electron locations in a fringe pattern
-  double x, y, z, boxx, boxy, FringeLength, theta;
+    double x = 0.0, y = 0.0, z, boxx, boxy, FringeLength, theta;
   double bottomcharge = 1.0 / (double)BottomSteps;
   int n, ntrials;
   bool Reject;
@@ -2460,7 +2460,7 @@ void MultiGrid::TraceFe55Cloud(int m)
   
   int i, j, n, nn, phase, bottomphase = 4, bottomcount, topcount, tracesteps = 0, tracestepsmax = 4000;
   double mu, E2, Emag, r2, sqrtr2, ve=0.0, vth=0.0, tau=0.0, Tscatt=0.0;
-  double rsq, rcloud, v1, v2, fac, xcenter, ycenter, zcenter;
+    double rsq, rcloud, v1 = 0.0, v2 = 0.0, fac, xcenter, ycenter, zcenter;
   double theta, phiangle, zmin, zmax;
   double SORChargeFactor =  (QE*MICRON_PER_M/(EPSILON_0*EPSILON_SI));
   double ElectronRepulsionFactor = SORChargeFactor / (4.0 * pi) * Fe55ElectronMult;

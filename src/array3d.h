@@ -13,7 +13,7 @@
 #include <stdio.h>       
 #include <stdlib.h>      
 #include <math.h>        
-#include <globals.h>
+#include "globals.h"
 
 using namespace std;
 

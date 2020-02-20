@@ -10,6 +10,7 @@
 //****************** poisson.cpp **************************
 
 #include "poisson.h"
+#include <iostream>
 
 int main(int argc, char *argv[])
 {
@@ -19,7 +20,7 @@ int main(int argc, char *argv[])
       printf("Only argument should be name of .cfg file");
       exit(0);
     }
-
+  std::cout << "Poisson_CCD Xcode Version\n";
   MultiGrid* multi = new MultiGrid(argv[1]);
 
   delete multi;
