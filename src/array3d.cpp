@@ -20,7 +20,7 @@ Array3D::Array3D(double Xmin, double Xmax, int Nx, double Ymin, double Ymax, int
   dx = (xmax - xmin) / (double) nx;
   dy = (ymax - ymin) / (double) ny;
   dzp = (zmax - zmin) / (double) nz;
-  x = new double[nx]; y = new double[ny]; z = new double[nz]; zp = new double[nz]; zplus = new double[nz]; zminus = new double[nz]; dzpdz = new double[nz]; zpz = new double[nz]; zmz = new double[nz], zw = new double[nz];
+    x = new double[nx]; y = new double[ny]; z = new double[nz]; zp = new double[nz]; zplus = new double[nz]; zminus = new double[nz]; dzpdz = new double[nz]; zpz = new double[nz]; static_cast<void>(zmz = new double[nz]), zw = new double[nz];
   data = new double[nx * ny * nz];
   
   // With the non-linear z-axis, it is useful to calculate a number of coordinates
@@ -166,7 +166,7 @@ double Array3D::Z(double zp)
 // Inverts ZP(z) using Newton's method
 {
   int i = 0;
-  double error = 1.0, lastroot = zp, newroot;
+    double error = 1.0, lastroot = zp, newroot = 0.0;
   while (error>1e-12)
     {
       newroot = lastroot - (ZP(lastroot) - zp) / DZPDz(lastroot);

@@ -16,7 +16,7 @@
 
 using namespace std;
 
-#include <globals.h>
+#include "globals.h"
 
 class Point
 {

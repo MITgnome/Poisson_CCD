@@ -78,7 +78,7 @@ void Polygon::Sort()
       //sort pointlist in place using the angles
       for (j=0; j<npoints-1; j++)
 	{
-	  imin = min_element(angle,angle+npoints) - angle;
+	  imin = int ( min_element(angle,angle+npoints) - angle);
 	  // min_element returns a pointer to the minimum, given pointers to the start and end
 	  oldpoint = pointlist[j];
 	  pointlist[j] = pointlist[imin];

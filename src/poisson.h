@@ -15,6 +15,6 @@
 #include <string.h>
 #include <string>
 
-#include <multigrid.h>
+#include "multigrid.h"
 
 using namespace std;

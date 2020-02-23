@@ -13,7 +13,7 @@
 #include <stdlib.h>      
 #include <math.h>        
 
-#include <globals.h>
+#include "globals.h"
 
 
 class Array2DInt //This packages the 2D data sets

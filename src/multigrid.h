@@ -25,14 +25,14 @@
 using namespace std;
 
 #include <assert.h>
-#include <globals.h>
-#include <fileio.h>
-#include <hdf5write.h>
-#include <hdf5read.h>
-#include <array3d.h>
-#include <array2d.h>
-#include <array2dint.h>
-#include <polygon.h>
+#include "globals.h"
+#include "fileio.h"
+#include "hdf5write.h"
+#include "hdf5read.h"
+#include "array3d.h"
+#include "array2d.h"
+#include "array2dint.h"
+#include "polygon.h"
 
 class MultiGrid
 {
